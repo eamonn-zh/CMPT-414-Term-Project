@@ -75,8 +75,7 @@ def train_nn(data_loader):
             img_list, label_list = data_loader.load_random_data(batch_size)
             _, loss = sess.run([cnn.optimize, cnn.loss], {cnn.input_data: img_list, cnn.label: label_list})
         print("\nFinish training.")
-        print("Model saved in ./license_plate_cnn folder.")
-        tf.train.Saver().save(sess, "license_plate_cnn/model")
+
     # Figure 1: Accuracy
     plt.plot(episode_list, acc_list)
     plt.title("Accuracy of the CNN versus Training Epoch (learning rate=%.3f)" % lr)
@@ -118,6 +117,7 @@ def test_nn():
             print("* Recognition result: %s *" % prediction)
             print("*************************\n")
             plt.imshow(img)
+            plt.title("Recognition result: %s" % prediction, fontsize=28)
             plt.axis('off')
             plt.show()
 

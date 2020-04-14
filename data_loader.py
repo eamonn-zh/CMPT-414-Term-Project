@@ -3,7 +3,7 @@
     author: Yiming Zhang, Chongyu Yuan
 """
 
-from PIL import Image
+import matplotlib.pyplot as plt
 import os
 import random
 
@@ -58,5 +58,5 @@ class Data_loader:
 
 
 def convert_img_to_list(image_name):
-    image = Image.open(image_name)
-    return [[image.getpixel((x, y)) for x in range(image.size[0])] for y in range(image.size[1])]
+    image = plt.imread(image_name)
+    return [[image[y][x] for x in range(len(image[0]))] for y in range(len(image))]
