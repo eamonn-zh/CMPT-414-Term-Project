@@ -75,7 +75,6 @@ def train_nn(data_loader):
             img_list, label_list = data_loader.load_random_data(batch_size)
             _, loss = sess.run([cnn.optimize, cnn.loss], {cnn.input_data: img_list, cnn.label: label_list})
         print("\nFinish training.")
-
     # Figure 1: Accuracy
     plt.plot(episode_list, acc_list)
     plt.title("Accuracy of the CNN versus Training Epoch (learning rate=%.3f)" % lr)

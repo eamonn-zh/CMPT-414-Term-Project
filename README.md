@@ -18,6 +18,8 @@ This project is written in python 3.6, please make sure you have installed:
 
   
   
+  The main function is in cnn.py, to run the program, just type ***python3 cnn.py***
+  
   Other running details are in report and youtube video
 
 --------------------------------------------------------------------------------
