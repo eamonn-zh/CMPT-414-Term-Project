@@ -111,7 +111,7 @@ def test_nn():
                 prediction = chr(result[0] + 57)
             else:
                 prediction = str(result[0])
-            img = data_loader.Image.open(root + str(img_name) + ".jpg")
+            img = plt.imread(root + str(img_name) + ".jpg")
             print("\n*************************")
             print("* Recognition result: %s *" % prediction)
             print("*************************\n")
